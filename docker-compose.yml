@@ -1,0 +1,13 @@
+version: "3"
+services:
+  server:
+    build: server/
+    command: java Server
+    ports:
+      - 5000:4000
+  client:
+    build: client/
+    command: java Client
+    network_mode: host
+    depends_on:
+      - server
